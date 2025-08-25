@@ -3,9 +3,6 @@ import emailjs from 'emailjs-com'
 import { useState } from "react"
 
 export const Contact = () => {
-    const SERVICE_ID = 'service_7puy6u2';
-    const TEMPLATE_ID = 'template_39hntvt';
-    const PUBLIC_KEY = 'Mde6SABDFRmeJeg9n';
 
     const [formData, setFormData] = useState({
       name: '',
@@ -16,15 +13,15 @@ export const Contact = () => {
     const handleSubmit = (e) => {
       e.preventDefault();
       console.log(e.target)
-      emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY).then((res) =>{
+      emailjs.sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, e.target, import.meta.env.VITE_PUBLIC_KEY).then((res) =>{
         alert("Message Sent!")
         setFormData({name: '', email: '', message: ''})
       }).catch(() => alert("Something went wrong. Please try again."));
     }
   return (
-    <section id="contact" className="min-h-screen flex items-center justify-center py-20">
+    <section id="contact" className=" min-h-screen md:flex items-center justify-center py-20">
       <RevealOnScroll>
-        <div className="px-4 w-150">
+        <div className="px-4 w-full md:w-150">
           <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
             Get In Touch
           </h2>

@@ -36,7 +36,24 @@ html, body{
     animation: loading 0.8s ease infinite;
   }
 }
+@font-face{
+  font-family: "Hero New";
+  src: url("./assets/font/Hero\ New\ Light.otf") format("opentype");
+  font-weight: 300;
 
+}
+
+@font-face{
+  font-family: "Hero New";
+  src: url("./assets/font/Hero\ New\ Regular.otf") format("opentype");
+  font-weight: 400;
+}
+
+@font-face{
+  font-family: "Hero New";
+  src: url("./assets/font/Hero\ New\ Bold.otf") format("opentype");
+  font-weight: 700;
+}
 .reveal{
   opacity:0;
   transform: translateY(20px);
@@ -46,4 +63,8 @@ html, body{
 .reveal.visible{
   opacity:1;
   transform: translateY(0);
+}
+
+.font-hero {
+  font-family: "Hero New", sans-serif;
 }
